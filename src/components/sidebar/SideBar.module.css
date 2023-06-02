@@ -1,0 +1,115 @@
+.container {
+  width: 30%;
+  height: 100%;
+  background-color: #fff;
+  padding: 60px 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: relative;
+  display: none;
+}
+.show {
+  display: block;
+}
+.listIcon {
+  position: fixed;
+  top: 13px;
+  left: 15px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 15px;
+  left: 85%;
+  color: rgb(48, 101, 238);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    position: relative;
+    width: 100%;
+    height: 80%;
+  }
+  .listIcon {
+    color: rgb(48, 101, 238);
+    position: absolute;
+    top: 60px;
+    left: 90%;
+  }
+  .closeIcon {
+    position: absolute;
+    top: 90%;
+    left: 85%;
+    z-index: 4;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+  }
+}
+
+.ul {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.li {
+  width: 90%;
+  height: 50px;
+  border-bottom: 1px solid rgb(240, 243, 247);
+  color: rgb(48, 101, 238);
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px 0px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.li span {
+  pointer-events: none;
+}
+.count {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(234, 240, 253);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.selected {
+  background-color: rgb(234, 240, 253);
+  animation: Li 0.3s ease-in-out;
+  -webkit-animation: Li 0.3s ease-in-out;
+}
+.selected::before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: rgb(48, 101, 238);
+  position: absolute;
+  left: 0;
+}
+@keyframes Li {
+  0% {
+    background-color: rgb(170, 196, 250);
+  }
+  100% {
+    background-color: rgb(234, 240, 253);
+  }
+}
